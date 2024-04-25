@@ -47,3 +47,26 @@ response = requests.get(url, headers=headers, params=querystring)
 
 print(response.json())
 """
+
+"""
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+from datetime import date, datetime, time, timedelta
+
+
+class Usuario(BaseModel):
+    nombre: str
+    apellidos: str | None = None
+    fecha_nacimiento: datetime = None
+    ventas: float | None = None
+
+
+app = FastAPI()
+
+
+@app.post("/usuarios/")
+async def create_item(item: Usuario):
+    return item
+
+"""
