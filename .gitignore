@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+data/
+finetunning/jigsaw_toxicity_comment_model/model.safetensors
 __pycache__/
 *.py[cod]
 *$py.class
