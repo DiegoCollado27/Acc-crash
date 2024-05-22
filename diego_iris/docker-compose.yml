@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  model_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.model
+    volumes:
+      - ./data:/app/data
+    # ports:
+    #  - "8000:8000"
+
+  prediction_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.predictor
+    ports:
+      - "8001:8001"
+
+  verifier_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.verifier
+
+    # ports:
+    #   - "8002:8002"
